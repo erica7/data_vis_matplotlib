@@ -33,7 +33,10 @@ def index(request):
             else:
                 yval.append('0')
         plt.plot(xval, yval, label=source)
+
+    plt.title('Total Annual Energy Consumption By Source')
     plt.ylabel(consumption['renewable']['series'][0]['units'])
+    plt.xlabel('Year')
     plt.legend()
     plt.savefig('apps/dashboard/static/dashboard/images/all.png')
     plt.clf()
@@ -78,9 +81,9 @@ def index(request):
 
     request.session['plots'] = []
 
-    rootdir = '/Users/wildcard/Documents/Python/Django/energy/apps/dashboard/static/dashboard/images/'
-    request.session['plots'] = []
-    for file in os.listdir(rootdir):
-        request.session['plots'].append(file)
+    # rootdir = '/Users/wildcard/Documents/Python/Django/energy/apps/dashboard/static/dashboard/images/'
+    # request.session['plots'] = []
+    # for file in os.listdir(rootdir):
+    #     request.session['plots'].append(file)
 
     return render(request, 'dashboard/index.html')
