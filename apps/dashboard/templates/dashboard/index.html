@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fun with matplotlib!</title>
+    {% load staticfiles %}
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="{% static 'dashboard/css/main.css' %}" media="screen" title="no title"  charset="utf-8">
+  </head>
+  <body>
+
+    <h1>matplotlib</h1>
+    <p><b>matplotlib</b> is a Python library to assist in displaying data easily and elegantly.</p>
+    <p>Pip install matplotlib and add 'import matplotlib' and 'import matplotlib.pyplot as plt' to views.py to get started.</p>
+
+    <h2>Energy Consumption by Source</h2>
+    <h4>Data source: U.S. Energy Information Administration</h4>
+    <ul>
+      <li>Twelve API requests (one per energy source)</li>
+      <li>Energy consumption on the y-axis; Year on the x-axis</li>
+      <li>matplotlib automatically changes the colors for each data set</li>
+    </ul>
+
+    <img src="{% static 'dashboard/images/all.png' %}" alt="hmmmm">
+
+    <h2>Weather Forecasts</h2>
+    <h4>Data source: Weather Underground</h4>
+    <ul>
+      <li>Temperature on y-axis; Hour on x-axis</li>
+      <li>Marker color is related to temperature</li>
+      <li>Marker size is related to humidity (larger = more humid)</li>
+    </ul>
+
+    <img src="{% static 'dashboard/images/hourly_forecast_Dallas.png' %}" alt="hmmmm"><br>
+    <img src="{% static 'dashboard/images/hourly_forecast_San Francisco.png' %}" alt="hmmmm"><br>
+    <img src="{% static 'dashboard/images/hourly_forecast_Greenville.png' %}" alt="hmmmm">
+
+  </body>
+</html>
